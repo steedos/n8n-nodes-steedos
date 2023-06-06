@@ -1,17 +1,17 @@
 import { INodeType, INodeTypeDescription } from 'n8n-workflow';
-import { httpVerbFields, httpVerbOperations } from './HttpVerbDescription';
+import { recordFields, recordOperations } from './RecordDescription';
 
-export class HttpBin implements INodeType {
+export class Steedos implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: 'HttpBin',
-		name: 'httpBin',
-		icon: 'file:httpbin.svg',
+		displayName: 'Steedos',
+		name: 'steedos',
+		icon: 'file:steedos.svg',
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
 		description: 'Interact with HttpBin API',
 		defaults: {
-			name: 'HttpBin',
+			name: 'Steedos',
 		},
 		inputs: ['main'],
 		outputs: ['main'],
@@ -55,8 +55,8 @@ export class HttpBin implements INodeType {
 				default: 'httpVerb',
 			},
 
-			...httpVerbOperations,
-			...httpVerbFields,
+			...recordOperations,
+			...recordFields,
 		],
 	};
 }

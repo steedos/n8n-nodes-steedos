@@ -5,10 +5,10 @@ import {
 	INodeProperties,
 } from 'n8n-workflow';
 
-export class HttpBinApi implements ICredentialType {
-	name = 'httpbinApi';
-	displayName = 'HttpBin API';
-	documentationUrl = '<your-docs-url>';
+export class SteedosApi implements ICredentialType {
+	name = 'steedosApi';
+	displayName = 'Steedos API';
+	documentationUrl = 'https://docs.steedos.com';
 	properties: INodeProperties[] = [
 		{
 			displayName: 'Token',

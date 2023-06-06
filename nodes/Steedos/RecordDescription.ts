@@ -1,7 +1,7 @@
 import { INodeProperties } from 'n8n-workflow';
 
 // When the resource `httpVerb` is selected, this `operation` parameter will be shown.
-export const httpVerbOperations: INodeProperties[] = [
+export const recordOperations: INodeProperties[] = [
 	{
 		displayName: 'Operation',
 		name: 'operation',
@@ -235,7 +235,7 @@ const deleteOperation: INodeProperties[] = [
 	},
 ];
 
-export const httpVerbFields: INodeProperties[] = [
+export const recordFields: INodeProperties[] = [
 	/* -------------------------------------------------------------------------- */
 	/*                                httpVerb:get                                */
 	/* -------------------------------------------------------------------------- */
