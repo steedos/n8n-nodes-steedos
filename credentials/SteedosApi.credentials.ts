@@ -11,16 +11,16 @@ export class SteedosApi implements ICredentialType {
 	documentationUrl = 'https://docs.steedos.com';
 	properties: INodeProperties[] = [
 		{
-			displayName: 'Token',
-			name: 'token',
+			displayName: 'API Key',
+			name: 'apiKey',
 			type: 'string',
 			default: '',
 		},
 		{
-			displayName: 'Domain',
-			name: 'domain',
+			displayName: 'Server URL',
+			name: 'rootUrl',
 			type: 'string',
-			default: 'https://httpbin.org',
+			default: 'https://demo.steedos.cn',
 		},
 	];
 
@@ -32,7 +32,7 @@ export class SteedosApi implements ICredentialType {
 		type: 'generic',
 		properties: {
 			headers: {
-				Authorization: '={{"Bearer " + $credentials.token}}',
+				Authorization: '={{"Bearer apikey," + $credentials.apiKey}}',
 			},
 		},
 	};
@@ -40,8 +40,9 @@ export class SteedosApi implements ICredentialType {
 	// The block below tells how this credential can be tested
 	test: ICredentialTestRequest = {
 		request: {
-			baseURL: '={{$credentials?.domain}}',
-			url: '/bearer',
+			baseURL: '={{$credentials?.rootUrl}}',
+			url: '/api/v4/users/validate',
+			method: 'POST',
 		},
 	};
 }

@@ -9,7 +9,7 @@ export class Steedos implements INodeType {
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
-		description: 'Interact with HttpBin API',
+		description: 'Interact with Steedos API',
 		defaults: {
 			name: 'Steedos',
 		},
@@ -17,12 +17,12 @@ export class Steedos implements INodeType {
 		outputs: ['main'],
 		credentials: [
 			{
-				name: 'httpbinApi',
+				name: 'steedosApi',
 				required: false,
 			},
 		],
 		requestDefaults: {
-			baseURL: 'https://httpbin.org',
+			baseURL: 'https://demo.steedos.cn',
 			url: '',
 			headers: {
 				Accept: 'application/json',

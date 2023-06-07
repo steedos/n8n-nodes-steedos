@@ -18,22 +18,8 @@ npm run build
 npm link
 ```
 
-Install the node into your local n8n instance:
-
-
-3. In the nodes directory within your n8n installation
-
-```sh
-cd ~/.n8n/nodes/
-npm link n8n-nodes-steedos
-```
-
-Check your directory
-
-> Make sure you run npm link n8n-nodes-steedos in the nodes directory within your n8n installation. This is probably something like ~/.n8n/nodes/
-
 Start n8n:
 
 ```sh
-n8n start
+n8n start --tunnel
 ```
